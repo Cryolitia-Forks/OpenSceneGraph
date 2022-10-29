@@ -830,6 +830,11 @@ IF(NOT ANDROID)
     ENDIF()
 ENDIF()
 
+IF(OSG_WINDOWING_SYSTEM STREQUAL "X11")
+  # optional Wayland graphics also supported..
+  FIND_PACKAGE(Wayland)
+ENDIF()
+
 ################################################################################
 # Create bin and lib directories if required
 
