@@ -52,6 +52,12 @@ class BoundingSphereImpl
         /** Creates a bounding sphere initialized to the given extents. */
         BoundingSphereImpl(const BoundingBoxImpl<VT>& bb) : _center(0.0,0.0,0.0),_radius(-1.0) { expandBy(bb); }
 
+        BoundingSphereImpl& operator= (const BoundingSphereImpl &o){
+            _center = o._center;
+            _radius = o._radius;
+            return *this;
+        }
+
         /** Clear the bounding sphere. Reset to default values. */
         inline void init()
         {

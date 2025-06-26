@@ -114,7 +114,7 @@ class IntersectionUpdateCallback : public osg::NodeCallback
                 {
                     if (intersectionGroup_.valid())
                     {
-                        // now we need to place the intersections which are in the SphereSegmenet's coordinate frame into
+                        // now we need to place the intersections which are in the SphereSegment's coordinate frame into
                         // to the final position.
                         osg::MatrixTransform* mt = new osg::MatrixTransform;
                         mt->setMatrix(osg::computeLocalToWorld(nv->getNodePath()));

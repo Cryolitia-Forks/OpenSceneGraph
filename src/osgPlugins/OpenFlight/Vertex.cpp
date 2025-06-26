@@ -46,6 +46,24 @@ Vertex::Vertex(const Vertex& vertex):
     }
 }
 
+Vertex & Vertex::operator= (const Vertex &vertex)
+{
+    _coord = vertex._coord;
+    _color = vertex._color;
+    _normal = vertex._normal;
+    _validColor = vertex._validColor;
+    _validNormal = vertex._validNormal;
+
+    for (int layer=0; layer<MAX_LAYERS; layer++)
+    {
+        _uv[layer] = vertex._uv[layer];
+        _validUV[layer] = vertex._validUV[layer];
+    }
+
+    return *this;
+}
+
+
 void Vertex::setCoord(const osg::Vec3& coord)
 {
     _coord = coord;

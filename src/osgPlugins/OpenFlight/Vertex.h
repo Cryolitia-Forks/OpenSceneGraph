@@ -35,6 +35,8 @@ public:
     Vertex();
     Vertex(const Vertex& vertex);
 
+    Vertex &operator= (const Vertex &vertex);
+
     void setCoord(const osg::Vec3& coord);
     void setColor(const osg::Vec4& color);
     void setNormal(const osg::Vec3& normal);

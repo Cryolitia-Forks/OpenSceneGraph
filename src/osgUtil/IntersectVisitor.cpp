@@ -275,7 +275,7 @@ void IntersectVisitor::addLineSegment(LineSegment* seg)
 
     if (cis->_segList.size()>=32)
     {
-        OSG_WARN<<"Warning: excessive number of line segmenets passed to IntersectVisitor::addLineSegment(..), maximum permitted is 32 line segments."<<std::endl;
+        OSG_WARN<<"Warning: excessive number of line segments passed to IntersectVisitor::addLineSegment(..), maximum permitted is 32 line segments."<<std::endl;
         OSG_WARN<<"         "<<seg->start()<<" "<<seg->end()<<" segment ignored.."<< std::endl;
         return;
     }

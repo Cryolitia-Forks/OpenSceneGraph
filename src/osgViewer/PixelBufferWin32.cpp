@@ -212,7 +212,7 @@ protected:
         _context(0),
         _instance(0) {}
 
-    TemporaryWindow &operator=(const TemporaryWindow &) { return *this; }
+    TemporaryWindow &operator=(const TemporaryWindow &) = delete;
 
     void create();
     void kill();

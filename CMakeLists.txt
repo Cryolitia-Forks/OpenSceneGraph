@@ -771,10 +771,7 @@ ELSE()
     FIND_PACKAGE(LIBLAS)
 
     IF (NOT(OSG_USE_LOCAL_LUA_SOURCE))
-        FIND_PACKAGE(Lua52)
-        IF (NOT (LUA_LIBRARIES AND LUA_INCLUDE_DIR))
-            FIND_PACKAGE(Lua51)
-        ENDIF()
+        FIND_PACKAGE(Lua)
     ENDIF()
 
     # V8 and Python plugins are tests for linking against these libraries but aren't functionality beyond this.

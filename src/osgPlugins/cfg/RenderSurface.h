@@ -73,6 +73,16 @@ class RenderSurface : public osg::Referenced
                      _width = ir._width;
                      _height = ir._height;
                 }
+
+                InputRectangle &operator = (const InputRectangle &ir)
+                {
+                    _left = ir._left;
+                    _bottom = ir._bottom;
+                    _width = ir._width;
+                    _height = ir._height;
+                    return *this;
+                }
+
                 virtual ~InputRectangle() {}
 
                 void set( float left, float right, float bottom, float top )

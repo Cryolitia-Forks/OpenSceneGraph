@@ -68,6 +68,7 @@ class ImageReaderWriter : public osgDB::ReaderWriter
             DataReference();
             DataReference(const std::string& fileName, unsigned int res, float width, float height,bool backPage);
             DataReference(const DataReference& rhs);
+            DataReference &operator= (const DataReference& rhs);
 
             std::string     _fileName;
             unsigned int    _resolutionX;

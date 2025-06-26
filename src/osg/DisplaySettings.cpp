@@ -720,9 +720,9 @@ void DisplaySettings::readEnvironmentalVariables()
     if (getEnvVar("OSG_KEYSTONE_FILES", value))
     {
     #if defined(WIN32) && !defined(__CYGWIN__)
-        char delimitor = ';';
+        char delimiter = ';';
     #else
-        char delimitor = ':';
+        char delimiter = ':';
     #endif
 
         std::string paths(value);
@@ -730,7 +730,7 @@ void DisplaySettings::readEnvironmentalVariables()
         {
             std::string::size_type start = 0;
             std::string::size_type end;
-            while ((end = paths.find_first_of(delimitor,start))!=std::string::npos)
+            while ((end = paths.find_first_of(delimiter,start))!=std::string::npos)
             {
                 _keystoneFileNames.push_back(std::string(paths,start,end-start));
                 start = end+1;
@@ -982,7 +982,7 @@ osg::Matrixd DisplaySettings::computeLeftEyeProjectionImplementation(const osg::
     else
     {
         // all other display types assume working like a projected power wall
-        // need to shjear projection matrix to account for asymetric frustum due to eye offset.
+        // need to shjear projection matrix to account for asymmetric frustum due to eye offset.
         return osg::Matrixd(1.0,0.0,0.0,0.0,
                            0.0,1.0,0.0,0.0,
                            iod/(2.0*sd),0.0,1.0,0.0,
@@ -1035,7 +1035,7 @@ osg::Matrixd DisplaySettings::computeRightEyeProjectionImplementation(const osg:
     else
     {
         // all other display types assume working like a projected power wall
-        // need to shjear projection matrix to account for asymetric frustum due to eye offset.
+        // need to shjear projection matrix to account for asymmetric frustum due to eye offset.
         return osg::Matrixd(1.0,0.0,0.0,0.0,
                            0.0,1.0,0.0,0.0,
                            -iod/(2.0*sd),0.0,1.0,0.0,

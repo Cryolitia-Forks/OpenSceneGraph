@@ -60,6 +60,21 @@ ImageReaderWriter::DataReference::DataReference(const DataReference& rhs):
     _backPage(rhs._backPage) {}
 
 
+ImageReaderWriter::DataReference &ImageReaderWriter::DataReference::operator= (const ImageReaderWriter::DataReference& rhs)
+{
+    _fileName = rhs._fileName;
+    _resolutionX = rhs._resolutionX;
+    _resolutionY = rhs._resolutionY;
+    _center = rhs._center;
+    _maximumWidth = rhs._maximumWidth;
+    _maximumHeight = rhs._maximumHeight;
+    _numPointsAcross = rhs._numPointsAcross;
+    _numPointsUp = rhs._numPointsUp;
+    _backPage = rhs._backPage;
+
+    return *this;
+}
+
 
 ImageReaderWriter::ImageReaderWriter()
 {

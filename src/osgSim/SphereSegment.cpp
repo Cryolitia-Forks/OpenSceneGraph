@@ -1945,7 +1945,7 @@ namespace SphereSegmentIntersector
 
     protected:
 
-        AzimPlaneIntersector& operator = (const AzimPlaneIntersector&) { return *this; }
+        AzimPlaneIntersector& operator = (const AzimPlaneIntersector&) = delete;
     };
 
     struct ElevationIntersector
@@ -2086,7 +2086,7 @@ namespace SphereSegmentIntersector
 
     protected:
 
-        ElevationIntersector& operator = (const ElevationIntersector&) { return *this; }
+        ElevationIntersector& operator = (const ElevationIntersector&) = delete;
 
     };
 
@@ -2216,7 +2216,7 @@ namespace SphereSegmentIntersector
 
     protected:
 
-        RadiusIntersector& operator = (const RadiusIntersector&) { return *this; }
+        RadiusIntersector& operator = (const RadiusIntersector&) = delete;
 
     };
 }
@@ -2491,7 +2491,7 @@ void SphereSegment::updatePrimitives()
     {
         unsigned int rowSize = _density+1;
 
-        // add primitve set
+        // add primitive set
         osg::ref_ptr<osg::DrawElementsUShort> elements = new osg::DrawElementsUShort(GL_TRIANGLES);
         elements->reserve(2*rowSize*rowSize);
         _surfaceGeometry->getPrimitiveSetList().clear();
@@ -2557,7 +2557,7 @@ void SphereSegment::updatePrimitives()
     {
         unsigned int rowSize = _density+1;
 
-        // add primitve set
+        // add primitive set
         osg::ref_ptr<osg::DrawElementsUShort> elements = new osg::DrawElementsUShort(GL_LINES);
         elements->reserve(8);
         _spokesGeometry->getPrimitiveSetList().clear();
@@ -2581,7 +2581,7 @@ void SphereSegment::updatePrimitives()
     {
         unsigned int rowSize = _density+1;
 
-        // add primitve set
+        // add primitive set
         osg::ref_ptr<osg::DrawElementsUShort> elements = new osg::DrawElementsUShort(GL_LINE_STRIP);
         elements->reserve((rowSize-1)*4+1);
         _edgeLineGeometry->getPrimitiveSetList().clear();
@@ -2618,7 +2618,7 @@ void SphereSegment::updatePrimitives()
     {
         unsigned int rowSize = _density+1;
 
-        // add primitve set
+        // add primitive set
         osg::ref_ptr<osg::DrawElementsUShort> elements = new osg::DrawElementsUShort(GL_TRIANGLE_FAN);
         elements->reserve((rowSize-1)*4+2);
         _sidesGeometry->getPrimitiveSetList().clear();

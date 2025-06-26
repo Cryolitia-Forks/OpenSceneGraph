@@ -340,7 +340,7 @@ public:
 
 protected:
 
-    FindCompileableGLObjectsVisitor& operator = (const FindCompileableGLObjectsVisitor&) { return *this; }
+    FindCompileableGLObjectsVisitor& operator = (const FindCompileableGLObjectsVisitor&) = delete;
 };
 
 
@@ -1832,7 +1832,7 @@ public:
 
 protected:
 
-    FindPagedLODsVisitor& operator = (const FindPagedLODsVisitor&) { return *this; }
+    FindPagedLODsVisitor& operator = (const FindPagedLODsVisitor&) = delete;
 };
 
 
